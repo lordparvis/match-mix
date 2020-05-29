@@ -1,12 +1,5 @@
 # project-one
 
-Build an application that houses two models: one model is a home bar list
-and the second model is a log of cocktail recipes. The home bar list model accepts
-a name and ingredients. The cocktail recipe model accepts the name of a cocktail recipe and
-ingredients. The cocktail recipe view displays all submitted recipe names and allows the user to submit new recipes. It also allows the user to click into the recipe names to view the ingredients, as well as edit the recipe and delete the recipe. The bar view displays all created bar names (e.g. Connor's bar, Parvis' bar, etc.) and allows the user to create a new bar. It allows the user to click into the bar name to view it's ingredients and match all viable cocktail recipes that can be made with those ingredients. 
-It also allows the user to edit the bar ingredients as well as delete the bar.
-
-
 MVP
 Build an application that includes two models: one model is a home bar list
 and the second model is a log of cocktail recipes. The home bar list schema accepts
@@ -55,6 +48,10 @@ home/index page --> bars & recipes
       edit cocktail --> nav & a form & submit
 
 
-ERD - draw.io
+PROJECT PLAN
+This weekend & Monday --> build full site: controllers, models, views
+  Parvis: recipes
+  Connor: the bar
+Tuesday-Thurs: TBD
 
 
