@@ -18,7 +18,9 @@ router.get('/', function(req, res) {
 });
 
 //new
-
+router.get("/new", function (req, res) {
+    res.render("recipes/new");
+  });
 
 //create
 router.post("/", function(req, res) {
