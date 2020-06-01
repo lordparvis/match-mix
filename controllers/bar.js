@@ -14,7 +14,7 @@ router.get("/", async function (req, res) {
   }
 });
 
-/* New Bar route */
+/* New bar route */
 router.get("/new", function (req, res) {
   res.render("bars/new");
 });
@@ -30,5 +30,24 @@ router.post("/", function (req, res) {
     }
   });
 });
+
+/* Bar show route */
+router.get("/:id", async function (req, res) {
+  try {
+    const foundBar = await db.Bar.findById(req.params.id);
+      res.render("bars/show");
+  } catch (error) {
+    console.log(error);
+    res.send({message: "Internal Server Error"});
+  }
+});
+
+/* Edit bar route */
+
+
+/* Update bar */
+
+/* Delete bar */
+
 
 module.exports = router;
