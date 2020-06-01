@@ -32,7 +32,7 @@ app.get("/", function(req,res) {
 app.use("/bars", controllers.bar);
 
 // ingredient route
-// app.use("/ingredients", controllers.ingredient);
+app.use("/ingredients", controllers.ingredient);
 
 // recipe route
 // app.use("/recipes", controllers.recipe);
