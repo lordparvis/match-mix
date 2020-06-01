@@ -1,5 +1,5 @@
 module.exports = {
-  bar: require('./author'),
-  recipe: require('./recipe'),
-  ingredient: require('./ingredient')
-}
+    bar: require('./bar'),
+    recipe: require('./recipe'),
+    ingredient: require('./ingredient')
+};
