@@ -33,6 +33,19 @@ router.post("/", function (req, res) {
   });
 });
 
+/* Bar show route */
+// router.get("/:id",  function (req, res) {
+//   db.Ingredient.findById(req.params.id, function (error, foundIngredient) {
+//     if(error) {
+//       console.log(error);
+//       res.send({message: "Internal Server Error"});
+//     } else {
+//       const context = {ingredients: foundIngredient};
+//       res.render("ingredients/show", context);
+//     }
+//   });
+// });
+
 /* Edit ingredient route */
 router.get("/:id/edit",  function (req, res) {
   db.Ingredient.findById(req.params.id, function (error, foundIngredient) {
@@ -40,7 +53,7 @@ router.get("/:id/edit",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {ingredients: foundIngredient};
+      const context = {ingredient: foundIngredient};
       res.render("ingredients/edit", context);
     }
   });
