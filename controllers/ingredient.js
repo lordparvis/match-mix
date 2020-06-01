@@ -10,8 +10,8 @@ router.get("/", function (req, res) {
       console.log(error);
       res.send({message:"Internal Server Error"});
     } else {
-      const context = {Ingredients: allIngredients};
-      res.render = ("ingredients/index", context);
+      const context = {ingredients: allIngredients};
+      res.render("ingredients/index", context);
     }
   });
 });

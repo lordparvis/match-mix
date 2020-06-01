@@ -3,29 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Bar</title>
+  <title>The Ingredients</title>
 </head>
 <body>
   <header>
-    <h1>The Bar</h1>
+    <h1>The Ingredients</h1>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/bars">The Bar</a></li>
+        <li><a href="/bars">The Bars</a></li>
         <li><a href="/recipes">The Recipes</a></li>
       </ul>
     </nav>
   </header>
   <button><a href="/ingredients/new">Create New Ingredient (+)</a></button>
   <main>
-    <h3>Available Ingredients</h3>
-    <ul>
-      <% ingredients.forEach(ingredient => { %>
+    <sections>
+      <h5>Spirits</h5>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "spirit") { %>
+            <li>
+              <a><%= ingredient.name %></a>
+            </li>
+          <% } %>
+        <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h5>Soda</h5>
+      <ul>
         <li>
-          <a href="/ingredients/<%= ingredient._id %>"><%= ingredient.name %></a>
+          <a></a>
         </li>
-      <% }); %>
-    </ul>
+      </ul>
+    </sections>
+    <sections>
+      <h5>Juice</h5>
+      <ul>
+        <li>
+          <a></a>
+        </li>
+      </ul>
+    </sections>
+    <sections>
+      <h5>Mixers</h5>
+      <ul>
+        <li>
+          <a></a>
+        </li>
+      </ul>
+    </sections>
+    <sections>
+      <h5>Syrup</h5>
+      <ul>
+        <li>
+          <a></a>
+        </li>
+      </ul>
+    </sections>
+    <sections>
+      <h5>Bar Stock</h5>
+      <ul>
+        <li>
+          <a></a>
+        </li>
+      </ul>
+    </sections>
+    <sections>
+      <h5>Garnish</h5>
+      <ul>
+        <li>
+          <a></a>
+        </li>
+      </ul>
+    </sections>
   </main>
 </body>
 </html>

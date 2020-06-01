@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Bar</title>
+  <title>The Bars</title>
 </head>
 <body>
   <header>
-    <h1>The Bar</h1>
+    <h1>The Bars</h1>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -19,13 +19,6 @@
   <button><a href="/bars/new">Create New Bar (+)</a></button>
   <main>
     <h3>Available Collections</h3>
-    <ul>
-      <% bars.forEach(bar => { %>
-        <li>
-          <a href="/bars/<%= bar._id %>"><%= bar.name %></a>
-        </li>
-      <% }); %>
-    </ul>
   </main>
 </body>
 </html>
