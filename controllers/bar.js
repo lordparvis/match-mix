@@ -4,14 +4,16 @@ const router = express.Router();
 const db = require("../models");
 
 /* Root route /bars */
-router.get("/", async function (req, res) {
-  try {
-    const allBars = await db.Bar.find({});
-    res.send(allBars);
-  } catch (error) {
-    console.log(error);
-    res.send({message: "Internal Server Error"});
-  }
+router.get("/", function (req, res) {
+  db.Bar.find({}, function (error, allBars) {
+    if(error) {
+      console.log(error);
+      res.send({message:"Internal Server Error"});
+    } else {
+      const context = {bars: allBars};
+      res.render = ("bars/index", context);
+    }
+  });
 });
 
 /* New bar route */
@@ -32,18 +34,30 @@ router.post("/", function (req, res) {
 });
 
 /* Bar show route */
-router.get("/:id", async function (req, res) {
-  try {
-    const foundBar = await db.Bar.findById(req.params.id);
-      res.render("bars/show");
-  } catch (error) {
-    console.log(error);
-    res.send({message: "Internal Server Error"});
-  }
+router.get("/:id",  function (req, res) {
+  db.Bar.findById(req.params.id, function (error, foundBar) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      const context = {bars: foundBar};
+      res.render("bars/show", context);
+    }
+  });
 });
 
 /* Edit bar route */
-
+router.get("/:id/edit",  function (req, res) {
+  db.Bar.findById(req.params.id, function (error, foundBar) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      const context = {bars: foundBar};
+      res.render("bars/edit", context);
+    }
+  });
+});
 
 /* Update bar */
 
