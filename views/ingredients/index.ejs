@@ -24,7 +24,9 @@
         <% ingredients.forEach(ingredient => { %>
           <% if(ingredient.type === "spirit") { %>
             <li>
-              <a><%= ingredient.name %></a>
+              <form action="/ingredients/<%= ingredients._id %>?_method=DELETE" method="POST" >
+                <a><%= ingredient.name %></a><input type="submit" value="(-)"></input>
+              </form>
             </li>
           <% } %>
         <% }) %>
