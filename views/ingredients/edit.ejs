@@ -20,7 +20,8 @@
   <main>
     <form action="/ingredients/<%= ingredient._id %>?_method=PUT" method="POST">
       <input type="text" name="name" placeholder="Ingredient Name" value="<%= ingredient.name %>" />
-      <select name="type" value="<%= ingredient.type %>">
+      <select name="type">
+        <option><%= ingredient.type %></option>
         <option value="spirit">Spirit</option>
         <option value="soda">Soda</option>
         <option value="juice">Juice</option>
