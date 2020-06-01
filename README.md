@@ -55,3 +55,12 @@ This weekend & Monday --> build full site: controllers, models, views
 Tuesday-Thurs: TBD
 
 
+Ingredient Types
+-Spirits
+-Soda
+-Juice
+-Mixer
+-Beer/Wine/Champagne
+-Syrup
+-Bar stock
+-Garnish

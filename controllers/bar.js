@@ -11,7 +11,7 @@ router.get("/", function (req, res) {
       res.send({message:"Internal Server Error"});
     } else {
       const context = {bars: allBars};
-      res.render = ("bars/index", context);
+      res.render("bars/index", context);
     }
   });
 });
