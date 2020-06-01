@@ -35,7 +35,7 @@ app.use("/bars", controllers.bar);
 app.use("/ingredients", controllers.ingredient);
 
 // recipe route
-// app.use("/recipes", controllers.recipe);
+app.use("/recipes", controllers.recipe);
 
 
 /* Bind Server to PORT */

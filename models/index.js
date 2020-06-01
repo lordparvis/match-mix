@@ -16,6 +16,6 @@ mongoose.connect(connectionString, {
 
 module.exports = {
   Bar: require("./Bar"),
-  // Recipe: require("./Recipe"),
+  Recipe: require("./Recipe"),
   Ingredient: require("./Ingredient")
 };
