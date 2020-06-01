@@ -34,9 +34,14 @@
     <sections>
       <h5>Soda</h5>
       <ul>
-        <li>
-          <a></a>
-        </li>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "soda") { %>
+            <li>
+                <a><%= ingredient.name %></a>
+                <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+          <% } %>
+        <% }) %>
       </ul>
     </sections>
     <sections>
