@@ -6,6 +6,26 @@
   <title>The Bar</title>
 </head>
 <body>
-  <h1>This is The Bar</h1>
+  <header>
+    <h1>The Bar</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ingredients">The Ingredients</a></li>
+        <li><a href="/recipes">The Recipes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <button><a href="/bars/new">Create New Bar (+)</a></button>
+  <main>
+    <h3>Available Collections</h3>
+    <ul>
+      <% bars.forEach(bar => { %>
+        <li>
+          <a href="/bars/<%= bar._id %>"><%= bar.name %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </main>
 </body>
 </html>
