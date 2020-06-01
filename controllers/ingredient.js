@@ -66,7 +66,7 @@ router.put("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      res.redirect(`ingredients/${updatedIngredient._id}`);
+      res.redirect("/ingredients");
     }
   });
 });
