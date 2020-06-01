@@ -24,15 +24,9 @@ app.use(methodOverride("_method"));
 /* Routes */
 
 // root route
-
 app.get("/", function(req, res) {
     res.render("index");
 });
-
-
-
-
-
 
 // bar route
 app.use("/bars", controllers.bar);
