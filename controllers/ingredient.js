@@ -33,6 +33,31 @@ router.post("/", function (req, res) {
   });
 });
 
+/* Edit ingredient route */
+router.get("/:id/edit",  function (req, res) {
+  db.Ingredient.findById(req.params.id, function (error, foundIngredient) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      const context = {ingredients: foundIngredient};
+      res.render("ingredients/edit", context);
+    }
+  });
+});
+
+/* Update ingredient */
+router.put("/:id",  function (req, res) {
+  db.Ingredient.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (error, updatedIngredient) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      res.redirect(`ingredients/${updatedIngredient._id}`);
+    }
+  });
+});
+
 /* Delete ingredient */
 router.delete("/:id",  function (req, res) {
   db.Ingredient.findByIdAndDelete(req.params.id, function (error, deletedIngredient) {
