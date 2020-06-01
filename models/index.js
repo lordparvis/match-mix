@@ -18,4 +18,4 @@ module.exports = {
   Bar: require("./Bar"),
   Recipe: require("./Recipe"),
   Ingredient: require("./Ingredient")
-}
+};

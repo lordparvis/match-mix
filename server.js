@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 const controllers = require("./controllers");
 
 /* Instanced Modules */
-const app = express;
+const app = express();
 
 /* Configuration Variables */
 const PORT = 4000;
