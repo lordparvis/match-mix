@@ -40,7 +40,7 @@ router.get("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {bars: foundBar};
+      const context = {bar: foundBar};
       res.render("bars/show", context);
     }
   });
@@ -53,7 +53,7 @@ router.get("/:id/edit",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {bars: foundBar};
+      const context = {bar: foundBar};
       res.render("bars/edit", context);
     }
   });

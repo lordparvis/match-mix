@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-  <title>New Ingredient</title>
+  <title>Edit Ingredient</title>
 </head>
 <body>
   <header>
-    <h1>Create Ingredient</h1>
+    <h1>Edit <%= ingredient.name %></h1>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -18,10 +18,9 @@
     </nav>
   </header>
   <main>
-    <form action="/ingredients" method="POST">
-      <input type="text" name="name" placeholder="Ingredient Name" />
-      <select name="type">
-        <option>Ingredient Type</option>
+    <form action="/ingredients/<%= ingredient._id %>?_method=PUT" method="POST">
+      <input type="text" name="name" placeholder="Ingredient Name" value="<%= ingredient.name %>" />
+      <select name="type" value="<%= ingredient.type %>">
         <option value="spirit">Spirit</option>
         <option value="soda">Soda</option>
         <option value="juice">Juice</option>
@@ -30,8 +29,9 @@
         <option value="barStock">Bar Stock</option>
         <option value="garnish">Garnish</option>
       </select>
-      <input type="submit" value="Add Ingredient" />
+      <input type="submit" value="Update Ingredient" />
     </form>
+    <a href="/ingredients/<%= ingredient._id %>/delete"><button>Delete Ingredient</button></a>
   </main>
 </body>
 </html>
