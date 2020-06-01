@@ -60,8 +60,27 @@ router.get("/:id/edit",  function (req, res) {
 });
 
 /* Update bar */
+router.put("/:id",  function (req, res) {
+  db.Bar.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (error, updatedBar) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      res.redirect(`bars/${updatedBar._id}`);
+    }
+  });
+});
 
 /* Delete bar */
-
+router.delete("/:id",  function (req, res) {
+  db.Bar.findByIdAndDelete(req.params.id, function (error, deletedBar) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      res.redirect("/bars");
+    }
+  });
+});
 
 module.exports = router;
