@@ -4,11 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://github.com/dhg/Skeleton/blob/master/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="https://github.com/dhg/Skeleton/blob/master/css/normalize.css">
+    <link href="/public/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
     <title>Recipes</title>
 </head>
 
 <body>
-    <p>Recipes</p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/ingredients">The Ingredients</a></li>
+                <li><a href="/recipes">The Recipes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>List of Recipes</h2>
+    <ul>
+        <% recipes.forEach(recipe => { %>
+            <li>
+                <a href="/recipe/<%= article._id %>">
+                    <%= recipe.name %>
+                </a>
+            </li>
+            <% }); %>
+    </ul>
+    <% if(recipes.length === 0){ %>
+        <p>No recipes available at the moment.</p>
+        <% } %>
+            <footer>
+
+            </footer>
 </body>
 
 </html>
