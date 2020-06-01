@@ -71,6 +71,19 @@ router.put("/:id",  function (req, res) {
   });
 });
 
+/* Delete ingredient --> ARE YOUR SURE? */
+router.get("/:id/delete",  function (req, res) {
+  db.Ingredient.findById(req.params.id, function (error, foundIngredient) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      const context = {ingredient: foundIngredient};
+      res.render("ingredients/delete", context);
+    }
+  });
+});
+
 /* Delete ingredient */
 router.delete("/:id",  function (req, res) {
   db.Ingredient.findByIdAndDelete(req.params.id, function (error, deletedIngredient) {
