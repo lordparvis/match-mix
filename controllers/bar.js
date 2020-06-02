@@ -38,12 +38,12 @@ router.post("/", function (req, res) {
     } else {
       res.redirect("/bars");
     }
-  });
+  });    
 });
 
 /* Bar show route */
 router.get("/:id",  function (req, res) {
-  db.Bar.findById(req.params.id, function (error, foundBar) {
+  db.Bar.findById(req.params.id).populate("ingredient").exec(function (error, foundBar) {
     if(error) {
       console.log(error);
       res.send({message: "Internal Server Error"});
