@@ -18,7 +18,15 @@ router.get("/", function (req, res) {
 
 /* New bar route */
 router.get("/new", function (req, res) {
-  res.render("bars/new");
+  db.Ingredient.find({}, function (error, allIngredients) {
+    if(error) {
+      console.log(error);
+      res.send({message:"Internal Server Error"});
+    } else {
+      const context = {ingredients: allIngredients};
+      res.render("bars/new", context);
+    }
+  });
 });
 
 /* Create new bar */

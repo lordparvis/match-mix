@@ -7,7 +7,7 @@
 </head>
 <body>
   <header>
-    <h1>Create Your Bar</h1>
+    <h1>Assemble Your Bar</h1>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -17,5 +17,19 @@
       </ul>
     </nav>
   </header>
+  <main>
+    <form action="/bars" method="POST">
+      <input type="text" name="name" placeholder="Your Bar Name" />
+      <h3>Spirits</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "spirit") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <input type="submit" value="Create Bar Collection" />
+    </form>
+  </main>
 </body>
 </html>
