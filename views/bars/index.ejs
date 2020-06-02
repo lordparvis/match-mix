@@ -11,20 +11,30 @@
 </head>
 
 <body>
-    <header>
-        <h1>The Bars</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/ingredients">The Ingredients</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <button><a href="/bars/new">Create New Bar (+)</a></button>
-    <main>
-        <h3>Available Collections</h3>
-    </main>
+  <header>
+    <h1>The Bars</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ingredients">The Ingredients</a></li>
+        <li><a href="/recipes">The Recipes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <button><a href="/bars/new">New Bar Collection (+)</a></button>
+  <main>
+    <h3>Available Collections</h3>
+    <ul>
+      <% if(bars.length === 0) { %>
+        <p>No Collections Available</p>
+      <% } %>
+      <% bars.forEach(bar => { %>
+          <li>
+              <a href="/bars/<%= bar._id %>"><%= bar.name %></a>
+          </li>
+      <% }); %>
+    </ul>
+  </main>
 </body>
 
 </html>

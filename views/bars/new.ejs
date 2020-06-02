@@ -11,17 +11,79 @@
 </head>
 
 <body>
-    <header>
-        <h1>Create Your Bar</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/ingredients">The Ingredients</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-                <li><a href="/bars">The Bars</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Assemble Your Bar</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/ingredients">The Ingredients</a></li>
+        <li><a href="/recipes">The Recipes</a></li>
+        <li><a href="/bars">The Bars</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <form action="/bars" method="POST">
+      <input type="text" name="name" placeholder="Your Bar Name" />
+      <h3>Spirits</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "spirit") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <h3>Soda</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "soda") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <h3>Juice</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "juice") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <h3>Mixers</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "mixers") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <h3>Syrup</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "syrup") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <h3>Bar Stock</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "barStock") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <h3>Garnish</h3>
+      <select name="ingredients" multiple>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "garnish") { %>
+            <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <input type="submit" value="Create Bar Collection" />
+    </form>
+  </main>
 </body>
 
 </html>
