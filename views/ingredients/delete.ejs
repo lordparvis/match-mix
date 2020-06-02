@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delete <%= ingredient.name %></title>
+    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete
+        <%= ingredient.name %>
+    </title>
 </head>
+
 <body>
   <header>
-    <h2>Uh Oh! Did you mix & match one too many?</h2>
+    <h2>Uh Oh! Did you match & mix one too many?</h2>
   </header>
   <main>
     <p>Before you proceed please understand that the more ingredients listed on this website, the more robust 
-      your mix & match experience will be!</p>
+      your match & mix experience will be!</p>
     <h4>Are you sure you want to permanently delete <%= ingredient.name %>?</h4>
     <section>
       <a href="/ingredients"><button>No, Don't Delete</button></a>
       <form action="/ingredients/<%= ingredient._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete"/>
+        <input type="submit" value="Yes, Delete"/>
       </form>
     </section>
   </main>
-
-
 </body>
+
 </html>
