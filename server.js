@@ -12,14 +12,17 @@ const app = express();
 /* Configuration Variables */
 const PORT = 4000;
 
+
 /* App configuration */
 app.set('view engine', 'ejs');
+
 
 
 /* Middleware */
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
-
+//styles
+app.use(express.static(__dirname + '/public'));
 
 /* Routes */
 
