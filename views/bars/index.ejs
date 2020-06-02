@@ -16,9 +16,19 @@
       </ul>
     </nav>
   </header>
-  <button><a href="/bars/new">Create New Bar (+)</a></button>
+  <button><a href="/bars/new">New Bar Collection (+)</a></button>
   <main>
     <h3>Available Collections</h3>
+    <ul>
+      <% if(bars.length === 0) { %>
+        <p>No Collections Available</p>
+      <% } %>
+      <% bars.forEach(bar => { %>
+          <li>
+              <a href="/bars/<%= bar._id %>"><%= bar.name %></a>
+          </li>
+      <% }); %>
+    </ul>
   </main>
 </body>
 </html>

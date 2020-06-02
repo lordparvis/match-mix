@@ -18,7 +18,15 @@ router.get("/", function (req, res) {
 
 /* New bar route */
 router.get("/new", function (req, res) {
-  res.render("bars/new");
+  db.Ingredient.find({}, function (error, allIngredients) {
+    if(error) {
+      console.log(error);
+      res.send({message:"Internal Server Error"});
+    } else {
+      const context = {ingredients: allIngredients};
+      res.render("bars/new", context);
+    }
+  });
 });
 
 /* Create new bar */
@@ -30,12 +38,12 @@ router.post("/", function (req, res) {
     } else {
       res.redirect("/bars");
     }
-  });
+  });    
 });
 
 /* Bar show route */
 router.get("/:id",  function (req, res) {
-  db.Bar.findById(req.params.id, function (error, foundBar) {
+  db.Bar.findById(req.params.id).populate("ingredients").exec(function (error, foundBar) {
     if(error) {
       console.log(error);
       res.send({message: "Internal Server Error"});
