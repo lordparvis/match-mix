@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-  <title>New Ingredient</title>
+    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>New Ingredient</title>
 </head>
+
 <body>
-  <header>
-    <h1>Create Ingredient</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/bars">The Bars</a></li>
-        <li><a href="/recipes">The Recipes</a></li>
-        <li><a href="/ingredients">The Ingredients</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <form action="/ingredients" method="POST">
-      <input type="text" name="name" placeholder="Ingredient Name" />
-      <select name="type">
+    <header>
+        <h1>Create Ingredient</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/bars">The Bars</a></li>
+                <li><a href="/recipes">The Recipes</a></li>
+                <li><a href="/ingredients">The Ingredients</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/ingredients" method="POST">
+            <input type="text" name="name" placeholder="Ingredient Name" />
+            <select name="type">
         <option>Ingredient Type</option>
         <option value="spirit">Spirit</option>
         <option value="soda">Soda</option>
@@ -30,8 +35,9 @@
         <option value="barStock">Bar Stock</option>
         <option value="garnish">Garnish</option>
       </select>
-      <input type="submit" value="Add Ingredient" />
-    </form>
-  </main>
+            <input type="submit" value="Add Ingredient" />
+        </form>
+    </main>
 </body>
+
 </html>
