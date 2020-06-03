@@ -28,6 +28,54 @@
           <% } %>
         <% }) %>
       </ul>
+      <h3>Soda</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "soda") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Juice</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "juice") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Mixers</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "mixer") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Syrup</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "syrup") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Bar Stock</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "barStock") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Garnish</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "garnish") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
     </sections>
     <section>
       <h2>Recipe Matches</h2>
