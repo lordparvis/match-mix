@@ -79,6 +79,19 @@ router.put("/:id",  function (req, res) {
   });
 });
 
+/* Delete bar --> ARE YOUR SURE? */
+router.get("/:id/delete",  function (req, res) {
+  db.Bar.findById(req.params.id, function (error, foundBar) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      const context = {bar: foundBar};
+      res.render("bars/delete", context);
+    }
+  });
+});
+
 /* Delete bar */
 router.delete("/:id",  function (req, res) {
   db.Bar.findByIdAndDelete(req.params.id, function (error, deletedBar) {

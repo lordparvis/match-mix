@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete <%= bar.name %></title>
+</head>
+<body>
+  <header>
+    <h2>Are you sure you want to permanently delete <%= bar.name %>?</h2>
+  </header>
+  <main>
+    <button><a href="/bars/<%= bar._id %>">No, Don't Delete</a></button>
+    <form action="/bars/<%= bar._id %>?_method=DELETE" method="POST">
+      <input type="submit" value="Yes, Delete"/>
+    </form>
+  </main>
+</body>
+</html>
