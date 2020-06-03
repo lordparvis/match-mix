@@ -28,7 +28,7 @@ router.post("/", function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-        res.redirect("/ingredients");
+      res.redirect("/ingredients");
     }
   });
 });

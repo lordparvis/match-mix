@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>New Bar</title>
 </head>
-
 <body>
   <header>
     <h1>Assemble Your Bar</h1>
@@ -24,32 +23,23 @@
   </header>
   <main>
     <section>
-      <form action="/ingredients" method="POST">
-        <input type="text" name="name" placeholder="Ingredient Name" />
-        <select name="type">
-          <option>Ingredient Type</option>
-          <option value="spirit">Spirit</option>
-          <option value="soda">Soda</option>
-          <option value="juice">Juice</option>
-          <option value="mixer">Mixer</option>
-          <option value="syrup">Syrup</option>
-          <option value="barStock">Bar Stock</option>
-          <option value="garnish">Garnish</option>
-        </select>
-          <input type="submit" value="Add Ingredient" />
-      </form>
+      <button><a href="/ingredients/new">Add Missing Ingredient</a></button>
+      <h6>add any missing ingredients prior to building out a bar collection</h6>
     </section>
     <section>
       <form action="/bars" method="POST">
         <input type="text" name="name" placeholder="Bar Name" />
-        <h3>Spirits</h3>
-        <select name="ingredients" multiple>
+        <fieldset>
+          <legend>Spirits</legend>  
           <% ingredients.forEach(ingredient => { %>
             <% if(ingredient.type === "spirit") { %>
-              <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+              <div>
+                <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+                <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+              </div>
             <% } %>
           <% }) %>
-        </select>
+        </fieldset>
         <h3>Soda</h3>
         <select name="ingredients" multiple>
           <% ingredients.forEach(ingredient => { %>

@@ -6,11 +6,27 @@
   <title><%= bar.name %></title>
 </head>
 <body>
-  <h1><%= bar.name %></h1>
-  <ul>
-    <% bar.ingredients.forEach(ingredient => { %>
-      <li><%= ingredient.name %></li>
-   <% }) %>
-  </ul>
+  <header>
+    <h1><%= bar.name %></h1>
+  </header>
+  <main>
+    <sections>
+      <h3>Spirits</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "spirit") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+    </sections>
+    <section>
+      <h2>Recipe Matches</h2>
+        <!-- bar.recipes.forEach(recipe => { 
+          recipe.ingredients.forEach(ingredient => {
+            if(ingredient.name === )
+          } -->
+    </section>
+  </main>
 </body>
 </html>
