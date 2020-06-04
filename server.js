@@ -16,8 +16,6 @@ const PORT = 4000;
 /* App configuration */
 app.set('view engine', 'ejs');
 
-
-
 /* Middleware */
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
@@ -30,11 +28,6 @@ app.use(express.static(__dirname + '/public'));
 app.get("/", function(req, res) {
     res.render("index");
 });
-
-/* app.get('*', function(req, res) {
-    res.send('404');
-});
-*/
 
 // bar route
 app.use("/bars", controllers.bar);

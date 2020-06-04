@@ -48,21 +48,37 @@ router.get("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {bar: foundBar};
-      res.render("bars/show", context);
+      // find all ingredients that match foundBar
+      db.Recipe.find({"ingredients": {$all: {$in: foundBar.ingredients}}}, function (error, foundRecipes) {
+        if(error) {
+          console.log(error);
+          res.send({message:"Internal Server Error"});
+        } else {
+          console.log(foundRecipes);
+          const context = {bar: foundBar, recipes: foundRecipes};
+          res.render("bars/show", context);
+        }
+      });
     }
   });
 });
 
 /* Edit bar route */
 router.get("/:id/edit",  function (req, res) {
-  db.Bar.findById(req.params.id, function (error, foundBar) {
+  db.Bar.findById(req.params.id).populate("ingredients").exec(function (error, foundBar) {
     if(error) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {bar: foundBar};
-      res.render("bars/edit", context);
+      db.Ingredient.find({"_id": {$nin:foundBar.ingredients}}, function (error, allIngredients) {
+        if(error) {
+          console.log(error);
+          res.send({message:"Internal Server Error"});
+        } else {
+          const context = {bar: foundBar, ingredients: allIngredients};
+          res.render("bars/edit", context);
+        }
+      });
     }
   });
 });
@@ -74,7 +90,20 @@ router.put("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      res.redirect(`bars/${updatedBar._id}`);
+      res.redirect(`/bars/${updatedBar._id}`);
+    }
+  });
+});
+
+/* Delete bar --> ARE YOUR SURE? */
+router.get("/:id/delete",  function (req, res) {
+  db.Bar.findById(req.params.id, function (error, foundBar) {
+    if(error) {
+      console.log(error);
+      res.send({message: "Internal Server Error"});
+    } else {
+      const context = {bar: foundBar};
+      res.render("bars/delete", context);
     }
   });
 });
