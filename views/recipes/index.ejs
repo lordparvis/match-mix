@@ -27,9 +27,11 @@
     <ul>
         <% recipes.forEach(recipe => { %>
             <li>
-                <a href="/recipe/<%= article._id %>">
+
+                <a href="/recipes/<%=recipe._id %>">
                     <%= recipe.name %>
                 </a>
+        
             </li>
             <% }); %>
     </ul>
