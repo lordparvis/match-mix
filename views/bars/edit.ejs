@@ -26,20 +26,22 @@
         <input type="text" name="name" placeholder="<%= bar.name %>" value="<%= bar.name %>"/>
         <fieldset>
           <legend>Spirits</legend>
-          <% ingredients.forEach(ingredient => { %>
-            <% if(ingredient.type === "spirit") { %>
-              <div>
-                <% bar.ingredients.forEach(barIngredient => { %>
-                  <% if(barIngredient.name === ingredient.name) { %>
-                    <% return %> <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-                  <% } else { %>
-                    <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-                  <% } %>
-                <% }) %>
-                <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-              </div>
-            <% } %>
-          <% }) %>
+            <% bar.ingredients.forEach(ingredient => { %>
+              <% if(ingredient.type === "spirit") { %>
+                <div>
+                  <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+                  <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+                </div>
+              <% } %>
+            <% }) %>
+            <% ingredients.forEach(ingredient => { %>
+              <% if(ingredient.type === "spirit") { %>
+                <div>
+                  <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+                  <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+                </div>
+              <% } %>
+            <% }) %>
         </fieldset>
         <h3>Soda</h3>
         <select name="ingredients" multiple>

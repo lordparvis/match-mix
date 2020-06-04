@@ -61,7 +61,7 @@ router.get("/:id/edit",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      db.Ingredient.find({}, function (error, allIngredients) {
+      db.Ingredient.find({"_id": {$nin:foundBar.ingredients}}, function (error, allIngredients) {
         if(error) {
           console.log(error);
           res.send({message:"Internal Server Error"});
@@ -81,7 +81,7 @@ router.put("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      res.redirect(`bars/${updatedBar._id}`);
+      res.redirect(`/bars/${updatedBar._id}`);
     }
   });
 });
