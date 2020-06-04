@@ -30,6 +30,9 @@ app.use(express.static(__dirname + '/public'));
 app.get("/", function(req, res) {
     res.render("index");
 });
+app.get('*', function(req, res) {
+    res.send('404');
+});
 
 // bar route
 app.use("/bars", controllers.bar);
