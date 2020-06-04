@@ -48,8 +48,16 @@ router.get("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {bar: foundBar};
-      res.render("bars/show", context);
+      db.Recipe.find({"ingredients": {$all: foundBar.ingredients}}, function (error, foundRecipes) {
+        if(error) {
+          console.log(error);
+          res.send({message:"Internal Server Error"});
+        } else {
+          console.log(foundRecipes);
+          const context = {bar: foundBar, recipes: foundRecipes};
+          res.render("bars/show", context);
+        }
+      });
     }
   });
 });
