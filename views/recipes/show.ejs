@@ -7,12 +7,16 @@
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes Collection</title>
+    <title>
+        <%= recipe.name %>
+    </title>
 </head>
 
 <body>
     <header>
-        <h1>Recipes</h1>
+        <h1>
+            <%= recipe.name %>
+        </h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -20,9 +24,10 @@
                 <li><a href="/recipes">The Recipes</a></li>
             </ul>
         </nav>
+        <!-- current recipe ingridients -->
     </header>
 
-    <p>Recipes</p>
+    <p>Recipe</p>
 
 
 
