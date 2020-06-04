@@ -83,7 +83,9 @@
     </sections>
     <section>
       <h2>Recipe Matches</h2>
-      <p><%= recipes.name %></p>
+      <% recipes.forEach(recipe => { %>
+        <p><%= recipe.name %></p>
+      <% }) %>
       <!-- let match
       recipes.forEach(recipe => {
         recipe.ingredients.forEach(recipeIngredient => {

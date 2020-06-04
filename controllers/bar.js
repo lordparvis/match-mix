@@ -48,7 +48,8 @@ router.get("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      db.Recipe.find({"ingredients": {$all: foundBar.ingredients}}, function (error, foundRecipes) {
+      // find all ingredients that match foundBar
+      db.Recipe.find({"ingredients": {$all: {$in: foundBar.ingredients}}}, function (error, foundRecipes) {
         if(error) {
           console.log(error);
           res.send({message:"Internal Server Error"});
