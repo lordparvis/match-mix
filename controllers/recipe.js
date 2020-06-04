@@ -18,9 +18,17 @@ router.get('/', function(req, res) {
 });
 
 //new
-router.get("/new", function (req, res) {
-    res.render("recipes/new");
-  });
+router.get("/new", function(req, res) {
+    db.Ingredient.find({}, function(error, allIngredients) {
+        if (error) {
+            console.log(error);
+            res.send({ message: "Internal Server Error" });
+        } else {
+            const context = { ingredients: allIngredients };
+            res.render("recipes/new", context);
+        }
+    });
+});
 
 //create
 router.post("/", function(req, res) {
@@ -29,23 +37,24 @@ router.post("/", function(req, res) {
             console.log(err);
             res.send({ message: "Internal Server Error" });
         } else {
-            db.Recipe.findById(createdRecipe.recipe, function(err, foundRecipe) {
-                if (err) {
-                    console.log(err);
-                    res.send({ message: "Internal Server Error" });
-                } else {
-                    foundRecipe.recipes.push(createdRecipe);
-                    foundRecipe.save();
-                    res.redirect("/recipes");
-                }
-            });
+            res.redirect("/recipes");
         }
     });
 });
 
+/*
+Recipe.findOne({ title: 'Green Jin Recipe' }).
+  populate('green-jin-ingridients').
+  exec(function (err, story) {
+    if (err) return handleError(err);
+    render, recipe.ingredients.name);
+  });
+  */
+
+
 //show
 router.get("/:id", function(req, res) {
-    db.Recipe.findById(req.params.id).populate("recipe").exec(function(err, foundRecipe) {
+    db.Recipe.findById(req.params.id, function(err, foundRecipe) {
         if (err) {
             console.log(err);
             res.send({ message: "Internal Server Error" });
