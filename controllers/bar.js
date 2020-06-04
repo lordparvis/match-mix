@@ -81,7 +81,7 @@ router.put("/:id",  function (req, res) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      res.redirect(`bars/${updatedBar._id}`);
+      res.redirect(`/bars/${updatedBar._id}`);
     }
   });
 });
