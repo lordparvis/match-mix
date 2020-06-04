@@ -16,14 +16,66 @@
         <li><a href="/bars">The Bars</a></li>
       </ul>
     </nav>
+    <div>
+      <button><a href="/bars/<%= bar._id %>/edit">Edit Collection</a></button>
+      <button><a href="/bars/<%= bar._id %>/delete">Delete Collection</a></button>
+    </div>
   </header>
   <main>
-    <h2>Inventory</h2>
+    <h2>Collection Inventory</h2>
     <sections>
       <h3>Spirits</h3>
       <ul>
         <% bar.ingredients.forEach(ingredient => { %>
           <% if(ingredient.type === "spirit") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Soda</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "soda") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Juice</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "juice") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Mixers</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "mixer") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Syrup</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "syrup") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Bar Stock</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "barStock") { %>
+            <li><a><%= ingredient.name %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
+      <h3>Garnish</h3>
+      <ul>
+        <% bar.ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "garnish") { %>
             <li><a><%= ingredient.name %></a></li>
           <% } %>
         <% }) %>
