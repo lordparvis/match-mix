@@ -56,13 +56,20 @@ router.get("/:id",  function (req, res) {
 
 /* Edit bar route */
 router.get("/:id/edit",  function (req, res) {
-  db.Bar.findById(req.params.id, function (error, foundBar) {
+  db.Bar.findById(req.params.id).populate("ingredients").exec(function (error, foundBar) {
     if(error) {
       console.log(error);
       res.send({message: "Internal Server Error"});
     } else {
-      const context = {bar: foundBar};
-      res.render("bars/edit", context);
+      db.Ingredient.find({}, function (error, allIngredients) {
+        if(error) {
+          console.log(error);
+          res.send({message:"Internal Server Error"});
+        } else {
+          const context = {bar: foundBar, ingredients: allIngredients};
+          res.render("bars/edit", context);
+        }
+      });
     }
   });
 });
