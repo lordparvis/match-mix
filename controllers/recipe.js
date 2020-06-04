@@ -42,16 +42,6 @@ router.post("/", function(req, res) {
     });
 });
 
-/*
-Recipe.findOne({ title: 'Green Jin Recipe' }).
-  populate('green-jin-ingridients').
-  exec(function (err, story) {
-    if (err) return handleError(err);
-    render, recipe.ingredients.name);
-  });
-  */
-
-
 //show
 router.get("/:id", function(req, res) {
     db.Recipe.findById(req.params.id, function(err, foundRecipe) {
@@ -67,7 +57,7 @@ router.get("/:id", function(req, res) {
 
 //edit
 router.get("/:id/edit", function(req, res) {
-    db.Recipe.findById(req.params.id, function(err, foundRecipe) {
+    db.Recipe.findByIdAndUpdate(req.params.id, function(err, foundRecipe) {
         if (err) {
             console.log(err);
             res.send({ message: "Internal Server Error" });
@@ -92,21 +82,12 @@ router.put("/:id", function(req, res) {
 
 //delete
 router.delete("/:id", function(req, res) {
-    db.Recipe.findByIdAndDelete(req.params.id, function(err, deletedRecipe) {
-        if (err) {
-            console.log(err);
+    db.Recipe.findByIdAndDelete(req.params.id, function(error, deletedRecipe) {
+        if (error) {
+            console.log(error);
             res.send({ message: "Internal Server Error" });
         } else {
-            db.Recipe.findById(deletedRecipe.recipe, function(err, foundRecipe) {
-                if (err) {
-                    console.log(err);
-                    res.send({ message: "Internal Server Error" });
-                } else {
-                    foundRecipe.recipes.remove(deletedRecipe);
-                    foundRecipe.save();
-                    res.redirect('/recipes');
-                }
-            });
+            res.redirect("/recipes");
         }
     });
 });
