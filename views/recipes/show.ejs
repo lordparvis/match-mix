@@ -31,7 +31,7 @@
         <% recipe.ingredients.forEach(ingredient => { %>
             <%= recipe.ingredient.name %>
                 <% }) %>
-                    Description::
+                    Description:
                     <%= recipe.description %>
                         <button><a href="/recipes/<%= recipe._id %>/edit">Update</a></button>
                         <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
