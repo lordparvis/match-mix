@@ -85,6 +85,9 @@
       <h2>Recipe Matches</h2>
       <% recipeMatch.forEach(recipe => { %>
         <p><%= recipe.name %></p>
+        <% recipe.ingredients.forEach(ingredient => { %>
+          <li><%= ingredient.map(i => i.name) %></li>
+        <% }) %>
       <% }) %>
     </section>
   </main>

@@ -21,6 +21,11 @@
             </ul>
         </nav>
     </header>
+    <form action="/action_page.php">
+      <label for="img">Select image:</label>
+      <input type="file" id="img" name="img" accept="image/*">
+      <input type="submit">
+    </form>
     <form action="/recipes" method="POST">
         <input type="text" name="name" placeholder="Recipe Name" />
         <h2>Available Ingredients</h2>
