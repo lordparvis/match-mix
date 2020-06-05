@@ -6,17 +6,35 @@ body {
   align-items: center;
 }
 
-nav {
+#homeNav {
   position: absolute;
+  width: 150px;
   left: 20px;
+  top: 100px;
 }
 
-nav>ul>li {
+nav>ul {
+  margin: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
   list-style-type: none;
+  height: 40px;
+  margin: 0;
+  background-color: rgb(209, 221, 230);
+}
+
+.navAnchor {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 main {
   text-align: center;
+  width: 90vw;
 }
 
 footer {
