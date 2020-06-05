@@ -2,44 +2,48 @@
 <html lang="en">
 
 <head>
-    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= recipe.name %>
-    </title>
+  <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= recipe.name %>
+  </title>
 </head>
 
 <body>
-    <header>
+  <header>
+   <nav>
+  <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/bars">The Bars</a></li>
+     <li><a href="/ingredients">The Ingredients</a></li>
+     <li><a href="/recipes">The Recipes</a></li>
+  </ul>
+   </nav>
+  </header>
+  <h1>
+    <%= recipe.name %>
+  </h1>
+  <!-- current recipe ingridients -->
+  <br> Ingredients:
+  <% recipe.ingredients.forEach(ingredient => { %>
+    <%= ingredient.name %>
+      <% }) %>
+        Description:
+        <%= recipe.description %> <br>
+          <button><a href="/recipes/<%= recipe._id %>/edit">Update</a></button>
+          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
 
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/ingredients">The Ingredients</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1>
-        <%= recipe.name %>
-    </h1>
-    <!-- current recipe ingridients -->
-    <br> Ingredients:
-    <% recipe.ingredients.forEach(ingredient => { %>
-        <%= ingredient.name %>
-            <% }) %>
-                Description:
-                <%= recipe.description %> <br>
-                    <button><a href="/recipes/<%= recipe._id %>/edit">Update</a></button>
-                    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-                        <input type="submit" value="Delete">
-
-                        <footer>
-
-                        </footer>
+    <footer>
+       Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
+      <br><p>This project is created by Connor & Parvis</p>
+      <h5>Please Drink Responsibly - Never Drink and Drive</h5>
+       <!--
+        We do not, under any circumstances, accept responsibility for any damages that result to yourself or anyone else due to the consumption of alcoholic beverages or the use of this site and any materials located on it. We cannot take any responsibility for the effect these drinks may have on people. -->
+   </footer>
 </body>
 
 </html>
