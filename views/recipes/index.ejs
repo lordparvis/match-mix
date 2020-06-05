@@ -3,44 +3,48 @@
 
 <head>
 
-    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
+  <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/ingredients">The Ingredients</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-            </ul>
-        </nav>
-    </header>
-
+  <header>
+    <h1 id=“brandname”>Match & Mix</h1>
     <h2>List of Recipes</h2>
-    <a href="/recipes/new">Create a new recipe</a>
-    <ul>
-        <% recipes.forEach(recipe => { %>
-            <li>
-
-                <a href="/recipes/<%=recipe._id %>">
-                    <%= recipe.name %>
-                </a>
-        
-            </li>
-            <% }); %>
-    </ul>
-    <% if(recipes.length === 0){ %>
-        <p>No recipes available at the moment.</p>
-        <% } %>
-            <footer>
-
-            </footer>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/bars">The Bars</a></li>
+        <li><a href="/ingredients">The Ingredients</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+  <a href="/recipes/new">Create a new recipe</a>
+  <ul>
+    <% recipes.forEach(recipe => { %>
+      <li>
+        <a href="/recipes/<%=recipe._id %>">
+          <%= recipe.name %>
+        </a>
+      </li>
+      <% }); %>
+  </ul>
+  <% if(recipes.length === 0){ %>
+    <p>No recipes available at the moment.</p>
+    <% } %>
+</main>
+  <footer>
+      Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
+     <br><p>This project is created by Connor & Parvis</p>
+     <h5>Please Drink Responsibly - Never Drink and Drive</h5>
+      <!--
+       We do not, under any circumstances, accept responsibility for any damages that result to yourself or anyone else due to the consumption of alcoholic beverages or the use of this site and any materials located on it. We cannot take any responsibility for the effect these drinks may have on people. -->
+  </footer>
 </body>
 
 </html>

@@ -2,134 +2,141 @@
 <html lang="en">
 
 <head>
-    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ingredients</title>
+  <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ingredients</title>
 </head>
 
 <body>
-    <header>
-        <h1 id=“brandname”>Match & Mix</h1>
-        <h3>The Ingredients</h3>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/bars">The Bars</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <button><a href="/ingredients/new">Create New Ingredient (+)</a></button>
-    <main>
-        <sections>
-            <h3>Spirits</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "spirit") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-        <sections>
-            <h3>Soda</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "soda") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-        <sections>
-            <h3>Juice</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "juice") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-        <sections>
-            <h3>Mixers</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "mixer") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-        <sections>
-            <h3>Syrup</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "syrup") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-        <sections>
-            <h3>Bar Stock</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "barStock") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-        <sections>
-            <h3>Garnish</h3>
-            <ul>
-                <% ingredients.forEach(ingredient => { %>
-                    <% if(ingredient.type === "garnish") { %>
-                        <li>
-                            <a>
-                                <%= ingredient.name %>
-                            </a>
-                            <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
-                        </li>
-                        <% } %>
-                            <% }) %>
-            </ul>
-        </sections>
-    </main>
+  <header>
+    <h1 id=“brandname”>Match & Mix</h1>
+    <h3>The Ingredients</h3>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/bars">The Bars</a></li>
+        <li><a href="/recipes">The Recipes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <button><a href="/ingredients/new">Create New Ingredient (+)</a></button>
+  <main>
+    <sections>
+      <h3>Spirits</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "spirit") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h3>Soda</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "soda") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h3>Juice</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "juice") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h3>Mixers</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "mixer") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h3>Syrup</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "syrup") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h3>Bar Stock</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "barStock") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+    <sections>
+      <h3>Garnish</h3>
+      <ul>
+        <% ingredients.forEach(ingredient => { %>
+          <% if(ingredient.type === "garnish") { %>
+            <li>
+              <a>
+                <%= ingredient.name %>
+              </a>
+              <a href="/ingredients/<%= ingredient._id %>/edit">(edit)</a>
+            </li>
+            <% } %>
+              <% }) %>
+      </ul>
+    </sections>
+  </main>
+  <footer>
+    Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
+    <br><p>This project is created by Connor & Parvis</p>
+
+    <!--
+    We do not, under any circumstances, accept responsibility for any damages that result to yourself or anyone else due to the consumption of alcoholic beverages or the use of this site and any materials located on it. We cannot take any responsibility for the effect these drinks may have on people. -->
+  </footer>
 </body>
 
 </html>
