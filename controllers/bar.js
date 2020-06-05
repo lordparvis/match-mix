@@ -49,18 +49,18 @@ router.get("/:id",  function (req, res) {
       res.send({message: "Internal Server Error"});
     } else {
       db.Recipe.find({}, function (error, foundRecipes) {
-      // db.Recipe.find({ingredients: {$in: foundBar.ingredients}}, function (error, foundRecipes) {
         if(error) {
           console.log(error);
           res.send({message:"Internal Server Error"});
         } else {
-          const filter = foundRecipes.map(recipe => {
-            recipe.ingredients.forEach(ingredient => {
-              
-            })
-          })
-          console.log(foundRecipes);
-          const context = {bar: foundBar, recipes: foundRecipes};
+          const recipeMatch = [];
+          const barIndex = foundBar.ingredients.map(ingredient => ingredient._id);
+          foundRecipes.forEach(recipe => {
+            if(recipe.ingredients.every(i => barIndex.includes(i))){
+              recipeMatch.push(recipe);
+            }
+          });
+          const context = {bar: foundBar, recipes: foundRecipes, recipeMatch};
           res.render("bars/show", context);
         }
       });

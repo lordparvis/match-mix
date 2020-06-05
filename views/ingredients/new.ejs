@@ -2,41 +2,48 @@
 <html lang="en">
 
 <head>
-    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>New Ingredient</title>
+  <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>New Ingredient</title>
 </head>
 
 <body>
-    <header>
-        <h1>Create Ingredient</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/bars">The Bars</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-                <li><a href="/ingredients">The Ingredients</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <form action="/ingredients" method="POST">
-            <input type="text" name="name" placeholder="Ingredient Name" />
-            <select name="type">
-                <option>Ingredient Type</option>
-                <option value="spirit">Spirit</option>
-                <option value="soda">Soda</option>
-                <option value="juice">Juice</option>
-                <option value="mixer">Mixer</option>
-                <option value="syrup">Syrup</option>
-                <option value="barStock">Bar Stock</option>
-                <option value="garnish">Garnish</option>
-            </select>
-            <input type="submit" value="Add Ingredient" />
-        </form>
-    </main>
+  <header>
+    <h1>Create Ingredient</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/bars">The Bars</a></li>
+        <li><a href="/recipes">The Recipes</a></li>
+        <li><a href="/ingredients">The Ingredients</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <form action="/ingredients" method="POST">
+      <input type="text" name="name" placeholder="Ingredient Name" />
+      <select name="type">
+        <option>Ingredient Type</option>
+        <option value="spirit">Spirit</option>
+        <option value="soda">Soda</option>
+        <option value="juice">Juice</option>
+        <option value="mixer">Mixer</option>
+        <option value="syrup">Syrup</option>
+        <option value="barStock">Bar Stock</option>
+        <option value="garnish">Garnish</option>
+      </select>
+      <input type="submit" value="Add Ingredient" />
+    </form>
+  </main>
+  <footer>
+    Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
+    <br><p>This project is created by Connor & Parvis</p>
+
+    <!--
+    We do not, under any circumstances, accept responsibility for any damages that result to yourself or anyone else due to the consumption of alcoholic beverages or the use of this site and any materials located on it. We cannot take any responsibility for the effect these drinks may have on people. -->
+  </footer>
 </body>
 </html>

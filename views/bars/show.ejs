@@ -83,25 +83,19 @@
     </sections>
     <section>
       <h2>Recipe Matches</h2>
-      <% recipes.forEach(recipe => { %>
+      <% recipeMatch.forEach(recipe => { %>
         <p><%= recipe.name %></p>
+        <% recipe.ingredients.forEach(ingredient => { %>
+          <li><%= ingredient.map(i => i.name) %></li>
+        <% }) %>
       <% }) %>
-      <!-- let match
-      recipes.forEach(recipe => {
-        recipe.ingredients.forEach(recipeIngredient => {
-          if(recipeIngredient.name ===
-          bar.ingredients.forEach(barIngredient => {
-            return barIngredient.name})){
-              match=true
-            } else {
-              match=false
-            }
-            if(match === true){
-              <p>recipes.name</p>
-            }
-          })
-        }) -->
     </section>
   </main>
+  <footer>
+    Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
+
+    <!--
+    We do not, under any circumstances, accept responsibility for any damages that result to yourself or anyone else due to the consumption of alcoholic beverages or the use of this site and any materials located on it. We cannot take any responsibility for the effect these drinks may have on people. -->
+</footer>
 </body>
 </html>
