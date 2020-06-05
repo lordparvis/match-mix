@@ -44,27 +44,34 @@ router.post("/", function(req, res) {
 
 //show
 router.get("/:id", function(req, res) {
-    db.Recipe.findById(req.params.id, function(err, foundRecipe) {
+    db.Recipe.findById(req.params.id).populate("ingredients").exec(function(err, foundRecipe) {
         if (err) {
             console.log(err);
             res.send({ message: "Internal Server Error" });
         } else {
             const context = { recipe: foundRecipe }
-            res.render("recipe/show", context);
+            res.render("recipes/show", context);
         }
     });
 });
 
 //edit
 router.get("/:id/edit", function(req, res) {
-    db.Recipe.findByIdAndUpdate(req.params.id, function(err, foundRecipe) {
+    db.Recipe.findById(req.params.id).populate("ingredients").exec(function(err, foundRecipe) {
         if (err) {
             console.log(err);
             res.send({ message: "Internal Server Error" });
         } else {
-            const context = { recipe: foundRecipe }
-            res.render("recipe/edit", context);
-        }
+            db.Ingredient.find({ "_id": { $nin: foundRecipe.ingredients } }, function(error, allIngredients) {
+                if (error) {
+                    console.log(error);
+                    res.send({ message: "Internal Server Error" });
+                } else {
+                    const context = { recipe: foundRecipe, ingredients: allIngredients }
+                    res.render("recipes/edit", context);
+                }
+            });
+        };
     });
 });
 

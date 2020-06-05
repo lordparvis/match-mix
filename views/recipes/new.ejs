@@ -34,7 +34,7 @@
                         <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
                     </div>
                     <% } %>
-                        <% }) %>
+                        <% }); %>
         </fieldset>
         <div>
             <fieldset>
@@ -46,7 +46,7 @@
                             <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
                         </div>
                         <% } %>
-                            <% }) %>
+                            <% }); %>
             </fieldset>
         </div>
         <div>
@@ -59,7 +59,7 @@
                             <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
                         </div>
                         <% } %>
-                            <% }) %>
+                            <% }); %>
             </fieldset>
         </div>
         <div>
@@ -72,7 +72,7 @@
                             <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
                         </div>
                         <% } %>
-                            <% }) %>
+                            <% }); %>
             </fieldset>
         </div>
         <div>
@@ -85,7 +85,20 @@
                             <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
                         </div>
                         <% } %>
-                            <% }) %>
+                            <% }); %>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Bar Stock</legend>
+                <%ingredients.forEach(ingredient => { %>
+                    <% if(ingredient.type === "barStock"){ %>
+                        <div>
+                            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+                            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+                        </div>
+                        <% } %>
+                            <% }); %>
             </fieldset>
         </div>
         <div>
@@ -98,7 +111,7 @@
                             <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
                         </div>
                         <% } %>
-                            <% }) %>
+                            <% }); %>
             </fieldset>
         </div>
 
