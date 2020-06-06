@@ -6,40 +6,7 @@ body {
   align-items: center;
 }
 
-#homeNav {
-  position: absolute;
-  width: 150px;
-  left: 20px;
-  top: 100px;
-}
-
-nav>ul {
-  margin: 0;
-  background-color: rgb(223, 234, 243);
-  border-radius: 15px;
-}
-
-.navItem {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  padding-left: 5px;
-  height: 40px;
-  margin: 0;
-  border-radius: 15px;
-}
-
-.navItem:hover {
-  background-color: rgb(213, 224, 233);
-  padding-left: 7px;
-}
-
-.navAnchor {
-  text-decoration: none;
-  font-size: 18px;
-}
-
-#homeHeader {
+#home-header {
   position: absolute;
   top: 0;
   display: inline-flex;
@@ -52,7 +19,7 @@ nav>ul {
   color: #F7F9FB;
 }
 
-#homeName {
+#home-name {
   margin: 0;
   text-decoration-line: underline overline;
 }
@@ -64,9 +31,96 @@ nav>ul {
   bottom: -1px;
 }
 
+nav {
+  position: absolute;
+  width: 150px;
+  left: 20px;
+  top: 100px;
+}
+
+#home-nav {
+  width: 100vw;
+  left: 0;
+  top: 92px;
+}
+
+.nav-ul {
+  margin: 0;
+  border-radius: 15px;
+}
+
+#home-ul {
+  width: 100vw;
+  display: inline-flex;
+  justify-content: space-evenly;
+  border-radius: 0;
+  background-color: #31708E;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 5px;
+  height: 40px;
+  margin: 0;
+  border-radius: 15px;
+}
+
+.nav-item:hover {
+  background-color: rgb(72, 127, 153);
+  padding-left: 7px;
+}
+
+.home-nav-item {
+  padding: 0;
+  justify-content: center;
+  width: 33vw;
+  border-radius: 0;
+
+}
+
+.home-nav-item:hover {
+  background-color: rgb(72, 127, 153);
+  padding-left: 0;
+}
+
+.nav-anchor {
+  text-decoration: none;
+  font-size: 18px;
+  color: #F7F9FB
+}
+
+.nav-anchor:hover {
+  color: #F7F9FB
+}
+
+.anchor-home:hover {
+  text-decoration: underline;
+}
+
 main {
   text-align: center;
   width: 80vw;
+}
+
+.home-main {
+  position: absolute;
+  top: 131px;
+  bottom: 49px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.header {
+  margin: 0;
+  text-decoration: underline;
+}
+
+.about {
+  font-size: larger;
 }
 
 footer {
@@ -78,10 +132,10 @@ footer {
   align-items: center;
   width: 100vw;
   height: 8vh;
-  background-color: rgb(126, 165, 197);
-  color: rgb(255, 255, 255);
+  background-color: #31708E;
+  color: #F7F9FB;
 }
 
 .disclaimer, .created {
-  margin: 0 10px;
+  margin: 0 20px;
 }
