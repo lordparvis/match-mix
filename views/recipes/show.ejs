@@ -23,20 +23,21 @@
   </ul>
    </nav>
   </header>
-  <h1>
-    <%= recipe.name %>
-  </h1>
-  <!-- current recipe ingridients -->
-  <br> Ingredients:
-  <% recipe.ingredients.forEach(ingredient => { %>
-    <%= ingredient.name %>
-      <% }) %>
-        Description:
-        <%= recipe.description %> <br>
-          <button><a href="/recipes/<%= recipe._id %>/edit">Update</a></button>
-          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete">
-
+  <main>
+    <h1>
+      <%= recipe.name %>
+    </h1>
+    <!-- current recipe ingridients -->
+    <br> Ingredients:
+    <% recipe.ingredients.forEach(ingredient => { %>
+      <%= ingredient.name %>
+        <% }) %>
+          Description:
+          <%= recipe.description %> <br>
+            <button><a href="/recipes/<%= recipe._id %>/edit">Update</a></button>
+            <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete">
+  </main>
     <footer>
        Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
       <br><p>This project is created by Connor & Parvis</p>
