@@ -4,6 +4,20 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #F7F9FB;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 9vh;
+  background-color: #687864;
+  color: #F7F9FB;
 }
 
 #home-header {
@@ -19,12 +33,26 @@ body {
   color: #F7F9FB;
 }
 
+.brand-name {
+  margin: 0;
+  font-size: 3.3rem;
+  text-decoration-line: underline overline;
+}
+
 #home-name {
   margin: 0;
+  font-size: 5.0rem;
   text-decoration-line: underline overline;
 }
 
 .martini {
+  position: relative;
+  font-size: 36px;
+  left: -8px;
+  /* bottom: -1px; */
+}
+
+#home-martini {
   position: relative;
   font-size: 56px;
   left: -10px;
@@ -47,6 +75,7 @@ nav {
 .nav-ul {
   margin: 0;
   border-radius: 15px;
+  background-color: #31708E;
 }
 
 #home-ul {
@@ -64,7 +93,14 @@ nav {
   padding-left: 5px;
   height: 40px;
   margin: 0;
-  border-radius: 15px;
+}
+
+.top-nav {
+  border-radius: 15px 15px 0 0;
+}
+
+.bottom-nav {
+  border-radius: 0 0 15px 15px;
 }
 
 .nav-item:hover {
@@ -114,7 +150,7 @@ main {
   padding-top: 10px;
 }
 
-.header {
+.main-header {
   margin: 0;
   text-decoration: underline;
 }
