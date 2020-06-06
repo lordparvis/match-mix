@@ -27,160 +27,160 @@
   </header>
 
   <!-- Spirits -->
-
+<main>
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-  <section>
-    <input type="text" name="name" placeholder="<%= recipe.name %>" value="<%= recipe.name %>" />
-    <br> <textarea name="description" id="" cols="30" rows="10"><%= recipe.description %></textarea>
-    <fieldset>
-    <legend>Spirits</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "spirit") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "spirit") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
+    <section>
+      <input type="text" name="name" placeholder="<%= recipe.name %>" value="<%= recipe.name %>" />
+      <br> <textarea name="description" id="" cols="30" rows="10"><%= recipe.description %></textarea>
+      <fieldset>
+      <legend>Spirits</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "spirit") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "spirit") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
 
-    <!-- Soda -->
-    <fieldset>
-    <legend>Soda</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "soda") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "soda") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
+      <!-- Soda -->
+      <fieldset>
+      <legend>Soda</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "soda") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "soda") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
 
-    <!-- Juice -->
-    <fieldset>
-    <legend>Juice</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "juice") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "juice") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
+      <!-- Juice -->
+      <fieldset>
+      <legend>Juice</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "juice") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "juice") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
 
-    <!-- Mixer -->
-    <fieldset>
-    <legend>Mixer</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "mixer") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "mixer") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
+      <!-- Mixer -->
+      <fieldset>
+      <legend>Mixer</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "mixer") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "mixer") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
 
-    <!--Syrup-->
-    <fieldset>
-    <legend>Syrup</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "syrup") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "syrup") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
+      <!--Syrup-->
+      <fieldset>
+      <legend>Syrup</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "syrup") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "syrup") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
 
-    <!-- Bar Stock -->
-    <fieldset>
-    <legend>Bar Stock</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "barStock") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "barStock") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
+      <!-- Bar Stock -->
+      <fieldset>
+      <legend>Bar Stock</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "barStock") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "barStock") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
 
-    <!-- Garnish -->
-    <fieldset>
-    <legend>Garnish</legend>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <% if(ingredient.type === "garnish") { %>
-      <div>
-        <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
-        <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-      </div>
-      <% } %>
-        <% }) %>
-        <% ingredients.forEach(ingredient => { %>
-          <% if(ingredient.type === "garnish") { %>
-          <div>
-            <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
-            <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
-          </div>
-          <% } %>
-            <% }) %>
-    </fieldset>
-    <input type="submit" value="Update Recipe">
-  </section>
-  </form>
-
+      <!-- Garnish -->
+      <fieldset>
+      <legend>Garnish</legend>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <% if(ingredient.type === "garnish") { %>
+        <div>
+          <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>" checked>
+          <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+        </div>
+        <% } %>
+          <% }) %>
+          <% ingredients.forEach(ingredient => { %>
+            <% if(ingredient.type === "garnish") { %>
+            <div>
+              <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
+              <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
+            </div>
+            <% } %>
+              <% }) %>
+      </fieldset>
+      <input type="submit" value="Update Recipe">
+    </section>
+    </form>
+</main>
 
   <footer>
     Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
