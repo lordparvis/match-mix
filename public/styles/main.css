@@ -6,37 +6,136 @@ body {
   align-items: center;
 }
 
-#homeNav {
+#home-header {
+  position: absolute;
+  top: 0;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 15vh;
+  background-color: #687864;
+  color: #F7F9FB;
+}
+
+#home-name {
+  margin: 0;
+  text-decoration-line: underline overline;
+}
+
+.martini {
+  position: relative;
+  font-size: 56px;
+  left: -10px;
+  bottom: -1px;
+}
+
+nav {
   position: absolute;
   width: 150px;
   left: 20px;
   top: 100px;
 }
 
-nav>ul {
-  margin: 0;
+#home-nav {
+  width: 100vw;
+  left: 0;
+  top: 92px;
 }
 
-.navItem {
+.nav-ul {
+  margin: 0;
+  border-radius: 15px;
+}
+
+#home-ul {
+  width: 100vw;
+  display: inline-flex;
+  justify-content: space-evenly;
+  border-radius: 0;
+  background-color: #31708E;
+}
+
+.nav-item {
   display: flex;
   align-items: center;
   list-style-type: none;
+  padding-left: 5px;
   height: 40px;
   margin: 0;
-  background-color: rgb(209, 221, 230);
+  border-radius: 15px;
 }
 
-.navAnchor {
+.nav-item:hover {
+  background-color: rgb(72, 127, 153);
+  padding-left: 7px;
+}
+
+.home-nav-item {
+  padding: 0;
+  justify-content: center;
+  width: 33vw;
+  border-radius: 0;
+
+}
+
+.home-nav-item:hover {
+  background-color: rgb(72, 127, 153);
+  padding-left: 0;
+}
+
+.nav-anchor {
   text-decoration: none;
-  font-weight: 700;
   font-size: 18px;
+  color: #F7F9FB
+}
+
+.nav-anchor:hover {
+  color: #F7F9FB
+}
+
+.anchor-home:hover {
+  text-decoration: underline;
 }
 
 main {
   text-align: center;
-  width: 90vw;
+  width: 80vw;
+}
+
+.home-main {
+  position: absolute;
+  top: 131px;
+  bottom: 49px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.header {
+  margin: 0;
+  text-decoration: underline;
+}
+
+.about {
+  font-size: larger;
 }
 
 footer {
-  text-align: center;
+  position: absolute;
+  bottom: 0;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 8vh;
+  background-color: #31708E;
+  color: #F7F9FB;
+}
+
+.disclaimer, .created {
+  margin: 0 20px;
 }
