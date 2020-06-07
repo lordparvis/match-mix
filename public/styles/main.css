@@ -22,16 +22,8 @@ body {
 }
 
 #home-header {
-  position: absolute;
-  top: 0;
-  display: inline-flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
   height: 15vh;
-  background-color: #687864;
-  color: #F7F9FB;
 }
 
 /* Match & Mix title */
@@ -69,7 +61,7 @@ nav {
   position: absolute;
   width: 150px;
   left: 27px;
-  top: 58px;
+  top: 100%;
 }
 
 #home-nav {
@@ -144,21 +136,35 @@ nav {
 main {
   text-align: center;
   width: 80vw;
+  height: 80vh;
 }
 
 .home-main {
   position: absolute;
   top: 131px;
-  bottom: 49px;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 10px;
 }
 
+.page-name {
+  margin: 5px 0 15px 0;
+}
+
+.feature-button {
+  margin-bottom: 25px;
+}
+
 .main-section-header {
-  margin: 0;
+  margin-bottom: 15px;
   text-decoration: underline;
+}
+
+.primary-list {
+  list-style-type: none;
+  font-size: 18px;
 }
 
 .about {
