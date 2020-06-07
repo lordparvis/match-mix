@@ -1,6 +1,5 @@
 # Match & Mix
 
-_________________
 
 ## Index:
  - MVP
@@ -66,7 +65,7 @@ _________________
 Homepage
 ![Homepage!](https://git.generalassemb.ly/connorj1002/project-one/blob/master/wireframes/Home:Index.png "Homepage")
 
-#### The Bars
+### The Bars
 
 ##### Bar Collection View
 ![Collection!](https://git.generalassemb.ly/connorj1002/project-one/blob/master/wireframes/The%20Bar/Collection%20View.png "Bar Collection View")
@@ -80,7 +79,7 @@ Homepage
 ##### Bar Index Page
 ![BarIndex!](https://git.generalassemb.ly/connorj1002/project-one/blob/master/wireframes/The%20Bar/The%20Bar.png "Bar Home")
 
-#### The Recipes
+### The Recipes
 
 ##### Recipes Index Page
 ![Recipes!](https://git.generalassemb.ly/connorj1002/project-one/blob/master/wireframes/The%20Recipes/Recipes.png "Recipes Homepage")
@@ -105,6 +104,10 @@ home/index page --> bars & recipes
       edit cocktail --> nav & a form & submit
 
 
+### ERD 
+![ERD!](https://git.generalassemb.ly/connorj1002/project-one/blob/parvis/erd.png)
+
+
 ### PROJECT PLAN
 
 _________________
@@ -116,19 +119,20 @@ This weekend & Monday --> build full site: controllers, models, views
 Tuesday-Thurs: TBD
 
 
+
 ### Ingredient Types
 
 _________________
 
 
--Spirits
--Soda
--Juice
--Mixer
--Beer/Wine/Champagne
--Syrup
--Bar stock
--Garnish
+- Spirits
+- Soda
+- Juice
+- Mixer
+- Syrup
+- Bar stock
+- Garnish
+
 
 ## Milestones
 
@@ -140,7 +144,8 @@ ___________________
 
 - Create Frontend/Backend
 
-- Create Landing
+- Polish Application
+
 
 ## Dependencies Installed
 
@@ -161,6 +166,7 @@ ___________________
 - mongoose
 
 - nodemon
+
 
 ## Technologies
 
