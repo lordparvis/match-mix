@@ -2,48 +2,43 @@
 <html lang="en">
 
 <head>
-    <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bars</title>
+  <link href="/styles/mm-brand.ico" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/styles/skeleton.css">
+  <script src="https://kit.fontawesome.com/468ce0f85d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bars</title>
 </head>
-
 <body>
-    <header>
-        <h1 id=“brandname”>Match & Mix</h1>
-        <h2>The Bars</h2>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/ingredients">The Ingredients</a></li>
-                <li><a href="/recipes">The Recipes</a></li>
-            </ul>
-        </nav>
-    </header>
-    <button><a href="/bars/new">New Bar Collection (+)</a></button>
-    <main>
-        <h3>Available Collections</h3>
-        <ul>
-            <% if(bars.length === 0) { %>
-                <p>No Collections Available</p>
-                <% } %>
-                    <% bars.forEach(bar => { %>
-                        <li>
-                            <a href="/bars/<%= bar._id %>">
-                                <%= bar.name %>
-                            </a>
-                        </li>
-                        <% }); %>
-        </ul>
-    </main>
-    <footer>
-      Match & Mix Project is for educational purposes only and does not advocate or encourage the abuse of alcoholic beverages. Please drink responsibly and with moderation.
-
-      <!--
-      We do not, under any circumstances, accept responsibility for any damages that result to yourself or anyone else due to the consumption of alcoholic beverages or the use of this site and any materials located on it. We cannot take any responsibility for the effect these drinks may have on people. -->
+  <header class="header">
+    <i class="fas fa-bars menu"></i>
+    <img class="brand-name" src="https://i.imgur.com/JBZl01R.png" alt="Brand Name">
+    <nav>
+      <ul class="nav-ul">
+        <li class="nav-item top-nav"><a class="nav-anchor" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-anchor" href="/ingredients">The Ingredients</a></li>
+        <li class="nav-item bottom-nav"><a class="nav-anchor" href="/recipes">The Recipes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2 class="page-name">The Bars</h2>
+    <button id="new-bar"><a href="/bars/new">New Bar Collection (+)</a></button>
+    <h3>Available Collections</h3>
+      <ul>
+        <% if(bars.length === 0) { %>
+          <p>No Collections Available</p>
+        <% } %>
+          <% bars.forEach(bar => { %>
+            <li><a href="/bars/<%= bar._id %>"><%= bar.name %></a></li>
+          <% }); %>
+      </ul>
+  </main>
+  <footer>
+    <h6 class="disclaimer">Please Drink Responsibly | Never Drink and Drive</h6>
+    <h6 class="created">Created by Connor & Parvis</h6>
   </footer>
 </body>
-
 </html>

@@ -4,6 +4,21 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #F7F9FB;
+}
+
+/* HEADER SECTION --- home: home index only */
+.header {
+  position: absolute;
+  top: 0;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 9vh;
+  background-color: #687864;
+  color: #F7F9FB;
 }
 
 #home-header {
@@ -19,23 +34,42 @@ body {
   color: #F7F9FB;
 }
 
+/* Match & Mix title */
+.brand-name {
+  margin: 0;
+  height: 40px;
+}
+
 #home-name {
   margin: 0;
+  font-size: 5.0rem;
   text-decoration-line: underline overline;
 }
 
-.martini {
+#home-martini {
   position: relative;
   font-size: 56px;
   left: -10px;
   bottom: -1px;
 }
 
+/* Nav menu */
+.menu {
+  margin: 0 30px;
+  font-size: 28px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.menu:hover {
+  font-size: 30px;
+}
+
 nav {
   position: absolute;
   width: 150px;
-  left: 20px;
-  top: 100px;
+  left: 27px;
+  top: 58px;
 }
 
 #home-nav {
@@ -46,7 +80,8 @@ nav {
 
 .nav-ul {
   margin: 0;
-  border-radius: 15px;
+  border-radius: 0 15px 15px 15px;
+  background-color: #31708E;
 }
 
 #home-ul {
@@ -64,7 +99,14 @@ nav {
   padding-left: 5px;
   height: 40px;
   margin: 0;
-  border-radius: 15px;
+}
+
+.top-nav {
+  border-radius: 0 15px 0 0;
+}
+
+.bottom-nav {
+  border-radius: 0 0 15px 15px;
 }
 
 .nav-item:hover {
@@ -77,7 +119,6 @@ nav {
   justify-content: center;
   width: 33vw;
   border-radius: 0;
-
 }
 
 .home-nav-item:hover {
@@ -99,6 +140,7 @@ nav {
   text-decoration: underline;
 }
 
+/* MAIN SECTION */
 main {
   text-align: center;
   width: 80vw;
@@ -114,7 +156,7 @@ main {
   padding-top: 10px;
 }
 
-.header {
+.main-section-header {
   margin: 0;
   text-decoration: underline;
 }
@@ -123,6 +165,7 @@ main {
   font-size: larger;
 }
 
+/* FOOTER SECTION */
 footer {
   position: absolute;
   bottom: 0;
