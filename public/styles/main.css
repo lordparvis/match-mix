@@ -179,7 +179,9 @@ main {
 }
 
 fieldset {
-  margin-bottom: 20px;
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  width: 24vw;
 }
 
 legend {
@@ -189,9 +191,9 @@ legend {
 
 .check-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  align-content: center;
 }
 
 .check-item {
@@ -205,6 +207,10 @@ legend {
 
 .check-label {
   margin: 0;
+}
+
+.submit {
+  margin-bottom: 50px;
 }
 
 /* FOOTER SECTION */

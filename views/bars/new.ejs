@@ -25,14 +25,15 @@
     </nav>
   </header>
   <main>
-    <section>
+    <section class="main-header">
       <em>Add any missing ingredients prior to building out a bar collection</em>
       <button><a href="/ingredients/new">Add Missing Ingredients</a></button>
       <h2 class="page-name">New Bar Collection</h2>
     </section>
-    <section>
+    <section class="main-body">
       <form action="/bars" method="POST">
         <input class="name-input" type="text" name="name" placeholder="Bar Name" />
+        <div class="field-form">
         <fieldset>
           <legend>Spirits</legend>
           <div class="check-list">
@@ -76,7 +77,7 @@
           <legend>Mixers</legend>
           <div class="check-list">
             <% ingredients.forEach(ingredient => { %>
-              <% if(ingredient.type === "mixers") { %>
+              <% if(ingredient.type === "mixer") { %>
                 <div class="check-item">
                   <input class="check-input" type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
                   <label class="check-label" for="<%= ingredient.name %>"><%= ingredient.name %></label>
@@ -124,7 +125,8 @@
             <% }) %>
           </div>
         </fieldset>
-        <input type="submit" value="Create Bar Collection" />
+        </div>
+        <input class="submit" type="submit" value="Create Bar Collection" />
       </form>
     </section>
   </main>
