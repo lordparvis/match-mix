@@ -9,7 +9,7 @@ body {
 
 /* HEADER SECTION --- home: home index only */
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   display: inline-flex;
   flex-direction: row;
@@ -171,9 +171,45 @@ main {
   font-size: larger;
 }
 
+/* FORMS */
+.name-input {
+  text-align: center;
+  font-size: 18px;
+  width: 25vw;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+legend {
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.check-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.check-input {
+  margin: 0 5px 0 0;
+}
+
+.check-label {
+  margin: 0;
+}
+
 /* FOOTER SECTION */
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: inline-flex;
   flex-direction: row;
