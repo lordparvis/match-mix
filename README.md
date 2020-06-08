@@ -15,7 +15,7 @@
 _________________
 
 
-Build an application that includes two models: one model is a home bar list
+ Build an application that includes two models: one model is a home bar list
 and the second model is a log of cocktail recipes. The home bar list schema accepts
 a name and ingredients. The cocktail recipe model accepts the name of a cocktail recipe and
 ingredients. The cocktail recipe view displays all submitted recipe names and allows the user to submit new recipes. It also allows the user to click into the recipe names to view the ingredients, as well as edit the recipe and delete the recipe. The bar view displays all created bar names (e.g. Connor's bar, Parvis' bar, etc.) and allows the user to create a new bar. It allows the user to click into the bar name to view its ingredients and match all viable cocktail recipes that can be made with those ingredients. 
@@ -45,10 +45,10 @@ _________________
 
 #### The user navigates to Cocktail Recipes
  
- -The user lands on Cocktail Recipes views page, displaying the page title, a nav to Home and The Bar, a "create new recipe" button, and a list of available recipes
-  -The user selects "create new recipe" and navigates to the Create view
-  -This displays a page title, a nav to Home & The Bar & Cocktail Recipes, a recipe name input, and displays categories with ingredients available to select
-  -The user selects submit and is redirected back to Cocktail Recipes
+ - The user lands on Cocktail Recipes views page, displaying the page title, a nav to Home and The Bar, a "create new recipe" button, and a list of available recipes
+  - The user selects "create new recipe" and navigates to the Create view
+  - This displays a page title, a nav to Home & The Bar & Cocktail Recipes, a recipe name input, and displays categories with ingredients available to select
+  - The user selects submit and is redirected back to Cocktail Recipes
 
   -The user selects a recipe name and navigates to the recipe view page
   -This displays a page title, a nav, buttons to Edit and Delete the recipe, and a list of recipe ingredients/contents
@@ -62,7 +62,7 @@ _________________
 
 _________________
 
-Homepage
+### Homepage
 ![Homepage!](https://git.generalassemb.ly/connorj1002/project-one/blob/master/wireframes/Home:Index.png "Homepage")
 
 ### The Bars
@@ -175,5 +175,6 @@ ___________________
 Frontend - HTML, CSS, JS, JQuery
 
 Backend - Mongoose, Express, Node
+
 
 ### Created by Connor and Parvis
