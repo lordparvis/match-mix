@@ -213,6 +213,36 @@ legend {
   margin-bottom: 50px;
 }
 
+
+/* MODEL SHOW SPECIFIC */
+.stock-category {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  width: 24vw;
+}
+
+.stock-category>h4 {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.ingredient-item {
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.recipe-matches {
+  margin-bottom: 150px;
+}
+
 /* FOOTER SECTION */
 footer {
   position: fixed;
