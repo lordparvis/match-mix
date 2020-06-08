@@ -243,6 +243,11 @@ legend {
   margin-bottom: 150px;
 }
 
+/* INGREDIENTS SPECIFIC */
+#ingredients-body {
+  margin-bottom: 75px;
+}
+
 /* FOOTER SECTION */
 footer {
   position: fixed;
