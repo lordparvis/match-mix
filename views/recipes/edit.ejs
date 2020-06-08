@@ -31,12 +31,15 @@
 
 <main>
     <!-- Spirits -->
+    <section class="main-body">
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-    <section>
+
       <input type="text" name="name" placeholder="<%= recipe.name %>" value="<%= recipe.name %>" />
       <br> <textarea name="description" id="" cols="30" rows="10"><%= recipe.description %></textarea>
+      <div class="field-form">
       <fieldset>
       <legend>Spirits</legend>
+      <div class="check-list">
       <% recipe.ingredients.forEach(ingredient => { %>
         <% if(ingredient.type === "spirit") { %>
         <div>
@@ -47,12 +50,13 @@
           <% }) %>
           <% ingredients.forEach(ingredient => { %>
             <% if(ingredient.type === "spirit") { %>
-            <div>
+            <div class="check-item">
               <input type="checkbox" id="<%= ingredient.name %>" name="ingredients" value="<%= ingredient._id %>">
               <label for="<%= ingredient.name %>"><%= ingredient.name %></label>
             </div>
             <% } %>
               <% }) %>
+            </div>
       </fieldset>
 
       <!-- Soda -->
@@ -180,6 +184,7 @@
             <% } %>
               <% }) %>
       </fieldset>
+    </div>
       <input type="submit" value="Update Recipe">
     </section>
     </form>
