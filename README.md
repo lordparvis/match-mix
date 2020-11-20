@@ -1,5 +1,6 @@
-# project-one
+# Match & Mix
 
+![Match&Mix Homepage](https://github.com/royalwhale/match-mix/blob/parvis/wireframes/Home:Index.png)
 MVP
 Build an application that includes two models: one model is a home bar list
 and the second model is a log of cocktail recipes. The home bar list schema accepts
@@ -46,13 +47,6 @@ home/index page --> bars & recipes
     create cocktail --> nav & a form & submit
     cocktail --> name & nav & edit & list of ingredients & delete
       edit cocktail --> nav & a form & submit
-
-
-PROJECT PLAN
-This weekend & Monday --> build full site: controllers, models, views
-  Parvis: recipes
-  Connor: the bar
-Tuesday-Thurs: TBD
 
 
 Ingredient Types
